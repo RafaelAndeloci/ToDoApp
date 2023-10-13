@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import styles from "./App.module.css";
-import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 const BASE_URL = "http://localhost:3333/tasks";
 
 /**
@@ -9,8 +10,7 @@ const BASE_URL = "http://localhost:3333/tasks";
  * @returns {JSX.Element}
  */
 function App() {
-  const tasks = [];
-  const doneTasks = []; // TODO: Filter the tasks that are done if needed
+  const [tasks, setTasks] = useState([]);
 
   function handleSubmit() {
     // TODO: Handle the form submission
@@ -33,10 +33,10 @@ function App() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <TaskForm/>
+        <TaskForm />
       </header>
 
-      <TaskList/>
+      <TaskList />
     </div>
   );
 }
