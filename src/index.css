@@ -30,11 +30,17 @@ button {
 }
 
 body {
-  /** TODO: Change the default font-family */
-  /** TODO: Change the default background color */
-  /** TODO: Change the default text color */
+  font-family: 'Inter', sans-serif;
+  background: #030712;
+  color: #FFF;
 }
 
 input[type="checkbox"] {
-  /** TODO: Change the default checkbox input */
+  
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 87.5%;
+  }
 }

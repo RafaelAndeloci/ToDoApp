@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  border: 1px solid var(--gray-700);
+  border-radius: 0.5rem;
+  background: var(--gray-800);
+}
+
+.item > p {
+  width: 83%;
+}
+
+.deleteBtn {
+  justify-self: end;
+}
+
+.itemCheck {
+  justify-self: start;
+  margin-bottom: 10px;
+}

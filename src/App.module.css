@@ -1,1 +1,11 @@
-/** TODO: Write the styles for the App component */
+.container {
+    padding-top: 5rem;
+    margin-left: 29%;
+    margin-right: 29%;
+}
+
+.header {
+    font-weight: 500;
+    width: inherit;   
+}
+

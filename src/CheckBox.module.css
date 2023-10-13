@@ -1,0 +1,27 @@
+.checkBox {
+    appearance: none;
+
+    height: 16px;
+    width: 16px;
+    background: var(--gray-500);
+    border: 1px solid var(--blue-500);
+    border-radius: 50%;
+    color: var(--gray-100);
+    font-size: 0.5rem;
+    line-height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.checkBox:checked {
+    background: var(--blue-500);
+}
+  
+.checkBox:checked::before {
+    content: "✓";
+}
+  
+.checkBox:focus {
+    box-shadow: 0 0 0 2px var(--brand-purple-light);
+}

@@ -1,5 +1,6 @@
 import styles from "./App.module.css";
-
+import TaskForm from "./TaskForm";
+import TaskList from "./TaskList";
 const BASE_URL = "http://localhost:3333/tasks";
 
 /**
@@ -30,13 +31,12 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Minhas tarefas</h1>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <TaskForm/>
+      </header>
 
-      <ul>
-        <li>Tarefa 1</li>
-        <li>Tarefa 2</li>
-      </ul>
+      <TaskList/>
     </div>
   );
 }
