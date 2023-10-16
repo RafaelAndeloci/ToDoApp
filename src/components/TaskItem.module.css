@@ -7,6 +7,16 @@
   border: 1px solid var(--gray-700);
   border-radius: 0.5rem;
   background: var(--gray-800);
+  margin-top: 1rem;
+}
+
+.forgetPadrinFeito {
+  text-decoration: line-through;
+}
+
+
+.item > .itemCheck:checked {
+  text-decoration: line-through;
 }
 
 .item > p {
