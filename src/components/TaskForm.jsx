@@ -5,7 +5,6 @@ function TaskForm({ onSubmit }) {
   const inputRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   let [descripition, setDescripition] = useState("");
-  let [isDone, setIsDone] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -14,7 +13,7 @@ function TaskForm({ onSubmit }) {
 
     const task = {
       descripition,
-      isDone,
+      isDone: false,
     };
 
     await onSubmit(task);

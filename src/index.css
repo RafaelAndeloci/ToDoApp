@@ -24,19 +24,19 @@ input,
 button {
   font: inherit;
 }
+:focus {
+  outline: 3px solid var(--blue-500);
+  box-shadow: 0 0 0 2px var(--blue-500);
+}
 
 button {
   cursor: pointer;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: #030712;
-  color: #FFF;
-}
-
-input[type="checkbox"] {
-  
+  color: #fff;
 }
 
 @media (max-width: 600px) {

@@ -7,7 +7,7 @@ function TrashButton({ id, onDelete }) {
   }
   return (
     <button onClick={handleDelete} className={styles.btn} type="submit">
-      <Trash2 />
+      <Trash2 size={16} />
     </button>
   );
 }

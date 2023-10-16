@@ -12,8 +12,8 @@
 
 .forgetPadrinFeito {
   text-decoration: line-through;
+  background: var(--gray-800);
 }
-
 
 .item > .itemCheck:checked {
   text-decoration: line-through;

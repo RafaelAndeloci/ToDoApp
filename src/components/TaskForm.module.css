@@ -21,7 +21,8 @@
   border-radius: 0.5rem;
   color: #fff;
   width: 100px;
-  border: 1px solid var(--blue-700);
+  border-style: none;
+  outline-offset: 4px;
 }
 
 .form > input[type="submit"]:hover {

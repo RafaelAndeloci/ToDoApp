@@ -18,6 +18,7 @@
   padding: 4px 8px;
   justify-self: end;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .list {
