@@ -14,7 +14,7 @@ function TaskList({ tasks, onDelete, onCheckedChange }) {
   let counter = tasks.length;
 
   return (
-    <div className={styles.content}>
+    <div>
       {tasks.length ? (
         <div>
           <div className={styles.filter}>

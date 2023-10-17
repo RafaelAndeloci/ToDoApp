@@ -27,6 +27,7 @@ function TaskForm({ onSubmit }) {
       <h1>Minhas tarefas</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
+          ref={inputRef}
           type="text"
           placeholder="Cursin de React ✌️"
           required

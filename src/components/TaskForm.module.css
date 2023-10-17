@@ -24,4 +24,5 @@
 
 .form > button:hover {
   cursor: pointer;
+  background: var(--blue-600);
 }
