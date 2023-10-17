@@ -10,11 +10,13 @@
   margin-top: 1rem;
 }
 
-.forgetPadrinFeito {
+.item:has(input:checked) > p {
   text-decoration: line-through;
-  background: var(--gray-800);
 }
 
+.item:has(input:checked) {
+  opacity: 70%;
+}
 .item > .itemCheck:checked {
   text-decoration: line-through;
 }

@@ -25,7 +25,6 @@ function App() {
   }, []);
 
   async function handleSubmit(task) {
-    setIsLoading(true);
     const res = await fetch(BASE_URL, {
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +36,6 @@ function App() {
     const data = await res.json();
 
     setTasks([...tasks, data]);
-    setIsLoading(false);
   }
 
   async function handleCheckChange(id, checkedValue) {
@@ -65,13 +63,11 @@ function App() {
   }
 
   async function handleDelete(id) {
-    setIsLoading(true);
     await fetch(BASE_URL + id, {
       method: "DELETE",
     });
     const newTasks = tasks.filter((item) => item.id !== id);
     setTasks(newTasks);
-    setIsLoading(false);
   }
 
   return (

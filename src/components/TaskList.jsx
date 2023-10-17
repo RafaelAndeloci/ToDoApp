@@ -5,7 +5,6 @@ import CheckBox from "./CheckBox";
 import TaskItem from "./TaskItem";
 
 function TaskList({ tasks, onDelete, onCheckedChange }) {
-  const [isLoading, setIsLoading] = useState(false);
   const [checkedFilter, setCheckedFilter] = useState(false);
 
   const notDone = tasks.filter((item) => item.isDone === false);
@@ -20,15 +19,14 @@ function TaskList({ tasks, onDelete, onCheckedChange }) {
         <div>
           <div className={styles.filter}>
             <CheckBox
+              id="filter"
               task={filteredTasks.map((task) => task)}
               onCheckedChange={() => {
-                setIsLoading(true);
                 setCheckedFilter(!checkedFilter);
-                setIsLoading(false);
               }}
             />
             <div className={styles.title}>
-              <p>Filtrar tarefas não concluídas</p>
+              <label htmlFor="filter">Filtrar tarefas não concluídas.</label>
             </div>
 
             <p className={styles.counter}>
@@ -46,8 +44,6 @@ function TaskList({ tasks, onDelete, onCheckedChange }) {
                   onCheckedChange={onCheckedChange}
                 />
               ))
-            ) : isLoading ? (
-              <p>Carregando tarefas...</p>
             ) : (
               <p>Todas as tarefas foram concluídas. parabains</p>
             )}

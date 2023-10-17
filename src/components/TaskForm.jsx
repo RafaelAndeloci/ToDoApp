@@ -8,20 +8,17 @@ function TaskForm({ onSubmit }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     setIsLoading(true);
-
     const task = {
       descripition,
       isDone: false,
     };
 
     await onSubmit(task);
-    setIsLoading(false);
 
     //Resetando o form
     setDescripition("");
-
+    setIsLoading(false);
     inputRef.current?.focus();
   }
 
@@ -38,7 +35,9 @@ function TaskForm({ onSubmit }) {
           value={descripition}
           onChange={(event) => setDescripition(event.target.value)}
         />
-        <input type="submit" value="Criar tarefa" disabled={isLoading} />
+        <button disabled={isLoading} type="submit">
+          {isLoading ? "Carregando..." : "Criar tarefa"}
+        </button>
       </form>
     </div>
   );

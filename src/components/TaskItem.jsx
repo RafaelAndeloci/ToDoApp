@@ -6,7 +6,7 @@ import { useState } from "react";
 
 function TaskItem({ task, onDelete, onCheckedChange }) {
   return (
-    <div className={styles.item}>
+    <label className={styles.item}>
       <CheckBox
         task={task}
         onCheckedChange={onCheckedChange}
@@ -20,7 +20,7 @@ function TaskItem({ task, onDelete, onCheckedChange }) {
         onDelete={onDelete}
         className={styles.deleteBtn}
       />
-    </div>
+    </label>
   );
 }
 
