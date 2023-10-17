@@ -1,26 +1,27 @@
 import styles from "./TaskItem.module.css";
-import { Trash2 } from "lucide-react";
 import CheckBox from "./CheckBox";
-import TrashButton from "./TrashButton";
-import { useState } from "react";
+import { Trash2 } from "lucide-react";
 
 function TaskItem({ task, onDelete, onCheckedChange }) {
   return (
-    <label className={styles.item}>
-      <CheckBox
-        task={task}
-        onCheckedChange={onCheckedChange}
-        className={styles.itemCheck}
-      />
-      <p className={task.isDone ? styles.forgetPadrinFeito : ""}>
-        {task.descripition}
-      </p>
-      <TrashButton
-        id={task.id}
-        onDelete={onDelete}
-        className={styles.deleteBtn}
-      />
-    </label>
+    <li>
+      <label className={styles.item}>
+        <CheckBox
+          task={task}
+          onCheckedChange={onCheckedChange}
+          className={styles.itemCheck}
+        />
+        <p>{task.descripition}</p>
+        <button
+          type="button"
+          onClick={() => onDelete(task.id)}
+          className={styles.deleteBtn}
+          aria-label="Deletar tarefa"
+        >
+          <Trash2 size={16} />
+        </button>
+      </label>
+    </li>
   );
 }
 

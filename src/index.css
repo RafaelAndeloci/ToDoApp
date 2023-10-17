@@ -1,5 +1,5 @@
 :root {
-  --gray-950: #27272a;
+  --gray-950: #030712;
   --gray-800: #1f2937;
   --gray-700: #374151;
   --gray-400: #9ca3af;
@@ -35,7 +35,7 @@ button {
 
 body {
   font-family: "Inter", sans-serif;
-  background: #030712;
+  background: var(--gray-950);
   color: #fff;
 }
 
