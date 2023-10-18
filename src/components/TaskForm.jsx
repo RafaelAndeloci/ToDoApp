@@ -27,6 +27,7 @@ function TaskForm({ onSubmit }) {
 
     //Resetando o form
     setIsLoading(false);
+    inputRef.current.value = "";
     inputRef.current?.focus();
   }
 

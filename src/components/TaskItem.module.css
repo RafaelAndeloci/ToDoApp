@@ -12,7 +12,7 @@
 }
 
 .description {
-  word-break: break-all;
+  word-break: normal;
 }
 
 .item:has(input:checked) > p {
