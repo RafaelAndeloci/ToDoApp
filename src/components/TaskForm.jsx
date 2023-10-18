@@ -33,7 +33,7 @@ function TaskForm({ onSubmit }) {
 
   return (
     <div>
-      <h1>Minhas tarefas</h1>
+      <h1 style={{ fontSize: "1.5rem" }}>Minhas tarefas</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           ref={inputRef}
