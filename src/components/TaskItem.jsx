@@ -1,17 +1,29 @@
 import styles from "./TaskItem.module.css";
-import CheckBox from "./CheckBox";
 import { Trash2 } from "lucide-react";
+import { useState } from "react";
 
 function TaskItem({ task, onDelete, onCheckedChange }) {
+  const [isLoading, setIsLoading] = useState(false);
+  function handleCheckedChange(event) {
+    setIsLoading(true);
+    onCheckedChange(task.id, event.target.checked);
+    setIsLoading(false);
+  }
+
   return (
     <li>
       <label className={styles.item}>
-        <CheckBox
-          task={task}
-          onCheckedChange={onCheckedChange}
-          className={styles.itemCheck}
+        <input
+          id={task.id}
+          type="checkbox"
+          onChange={handleCheckedChange}
+          checked={task.isDone}
+          className={styles.checkBox}
+          disabled={isLoading}
         />
-        <p>{task.descripition}</p>
+
+        <p className={styles.description}>{task.description}</p>
+
         <button
           type="button"
           onClick={() => onDelete(task.id)}

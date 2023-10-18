@@ -4,20 +4,28 @@ import styles from "./TaskForm.module.css";
 function TaskForm({ onSubmit }) {
   const inputRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
-  let [descripition, setDescripition] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
+
+    //Utilizando Uncontrolled Input.
+    const description = inputRef.current.value;
+
+    //Verificando se o valor do input são só espaços em branco.
+    if (description.trim(" ").length === 0) {
+      setIsLoading(false);
+      inputRef.current.value = "";
+      return;
+    }
+
     const task = {
-      descripition,
+      description,
       isDone: false,
     };
-
     await onSubmit(task);
 
     //Resetando o form
-    setDescripition("");
     setIsLoading(false);
     inputRef.current?.focus();
   }
@@ -32,9 +40,7 @@ function TaskForm({ onSubmit }) {
           placeholder="Cursin de React ✌️"
           required
           minLength={2}
-          id="descripition"
-          value={descripition}
-          onChange={(event) => setDescripition(event.target.value)}
+          id="description"
         />
         <button disabled={isLoading} type="submit">
           {isLoading ? "Carregando..." : "Criar tarefa"}

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import styles from "./TaskList.module.css";
-import CheckBox from "./CheckBox";
 import TaskItem from "./TaskItem";
 
 function TaskList({ tasks, onDelete, onCheckedChange }) {
@@ -18,10 +17,11 @@ function TaskList({ tasks, onDelete, onCheckedChange }) {
       {tasks.length ? (
         <div>
           <div className={styles.filter}>
-            <CheckBox
+            <input
+              type="checkbox"
               id="filter"
               task={filteredTasks.map((task) => task)}
-              onCheckedChange={() => {
+              onChange={() => {
                 setCheckedFilter(!checkedFilter);
               }}
             />
